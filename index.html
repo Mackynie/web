@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Bellen's Batchoyan</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar start -->
+    <div class="container-fluid fixed-top">
+        <div class="container topbar bg-primary d-none d-lg-block">
+            <div class="d-flex justify-content-between">
+                <div class="top-info ps-2">
+                    <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="https://www.google.com/maps/place/Notre+Dame+of+Sarmiento+Inc.,+Parang,+Maguindanao/@7.3400762,124.2432958,844m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3256160abe741d4d:0x1818596d45fbeb68!8m2!3d7.3399602!4d124.2433754!16s%2Fg%2F11bvtgw2m0?entry=ttu" class="text-white">Notre Dame 1, Sarmiento, Parang, Maguindanao del Norte</a></small>
+                    <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#" class="text-white">Email@Example.com</a></small>
+                </div>
+                <div class="top-link pe-2">
+                    <a href="privacy.html" class="text-white"><small class="text-white mx-2">Privacy Policy</small>/</a>
+                    <a href="terms.html" class="text-white"><small class="text-white mx-2">Terms of Use</small>/</a>
+                </div>
+            </div>
+        </div>
+        <div class="container px-0">
+            <nav class="navbar navbar-light bg-white navbar-expand-xl">
+                <a href="index.html" class="navbar-brand">
+                    <h1 class="text-primary display-6">Bellen's Batchoyan</h1>
+                </a>
+                <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars text-primary"></span>
+                </button>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Login Form Start -->
+    <div class="container my-5">
+        <div class="log">
+            <h1>Log In</h1>
+            <form id="loginForm">
+                <label>Username</label>
+                <input class="form-control" type="text" name="uname" placeholder="Username" required><br>
+                <label>Password</label>
+                <input class="form-control" type="password" name="pword" placeholder="Password" required><br>
+                <button class="btn btn-primary" type="submit">Login</button>
+            </form>
+            <div id="errorMessage" class="text-danger mt-3"></div>
+        </div>
+    </div>
+    <!-- Login Form End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var uname = event.target.uname.value;
+            var pword = event.target.pword.value;
+
+            // Example client-side validation
+            if (uname === "Bellen" && pword === "1234") {
+                window.location.href = 'home.html';
+            } else {
+                document.getElementById('errorMessage').innerText = "Error, Username and Password don't match";
+            }
+
+            // Real-world implementation should include server-side validation
+            // Example:
+            // fetch('/login', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     },
+            //     body: JSON.stringify({ username: uname, password: pword })
+            // }).then(response => response.json())
+            // .then(data => {
+            //     if (data.success) {
+            //         window.location.href = 'home.html';
+            //     } else {
+            //         document.getElementById('errorMessage').innerText = data.message;
+            //     }
+            // });
+        });
+    </script>
+
+</body>
+
+</html>
